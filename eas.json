@@ -1,0 +1,24 @@
+{
+  "cli": {
+    "version": ">= 0.53.0"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal"
+    },
+    "production": {}
+  },
+  "submit": {
+    "production": {
+      "ios":{
+        "appleId":"qlian100@syr.edu",
+        "ascAppId":"1628688466",
+        "appleTeamId":"S683M3Y3LV"
+      }
+    }
+  }
+}
