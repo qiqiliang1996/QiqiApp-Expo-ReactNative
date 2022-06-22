@@ -40,7 +40,7 @@ export default function Profile({ navigation }) {
   );
 
   useEffect(() => {
-    requestPermission();
+    // requestPermission();
 
     const unsubscribe = onSnapshot(profileRef, (profileSnapshot) => {
       const result = profileSnapshot.docs.map((doc) => ({ ...doc.data() }));
@@ -109,10 +109,8 @@ export default function Profile({ navigation }) {
     console.log('uploadImage called? 333', uri, path, fName);
 
     const blob = await new Promise((resolve, reject) => {
-      console.log('bob?? called?');
       const xhr = new XMLHttpRequest();
       xhr.onload = function () {
-        console.log('resolve called??');
         resolve(xhr.response);
       };
       xhr.onerror = function (e) {
@@ -157,10 +155,10 @@ export default function Profile({ navigation }) {
         }}
       >
         <Text style={{ fontSize: 22 }}>Profile Info</Text>
-        <Text style={{ fontSize: 14 }}>
+        {/* <Text style={{ fontSize: 14 }}>
           Please provide your name and an optional profile photo
-        </Text>
-        <TouchableOpacity
+        </Text> */}
+        {/* <TouchableOpacity
           onPress={handleProfilePicture}
           style={{
             marginTop: 30,
@@ -180,7 +178,7 @@ export default function Profile({ navigation }) {
               style={{ width: '100%', height: '100%', borderRadius: 120 }}
             />
           )}
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <TextInput
           placeholder='Type your name'
           value={displayName}

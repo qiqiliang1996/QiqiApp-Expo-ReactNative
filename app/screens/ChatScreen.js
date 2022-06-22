@@ -17,6 +17,7 @@ import {
 } from '@firebase/firestore';
 import { Bubble, GiftedChat } from 'react-native-gifted-chat';
 import AuthContext from '../auth/context';
+import BugsnagLogger from '../utilities/logger';
 
 export default function Chat({ route }) {
   const [roomHash, setRoomHash] = useState('');
@@ -68,7 +69,8 @@ export default function Chat({ route }) {
         try {
           await setDoc(roomRef, roomData);
         } catch (error) {
-          console.log(error);
+          // console.log(error);
+          BugsnagLogger.log(error, 'error from chatScreen');
         }
       }
       const emailHash = `${currentUser.email}:${userB.email}`;

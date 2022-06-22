@@ -1,11 +1,12 @@
 import { collection, onSnapshot, query, where } from '@firebase/firestore';
 import React, { useContext, useEffect } from 'react';
-import { View } from 'react-native';
+import { View, Alert } from 'react-native';
 import GlobalContext from '../contexts/GlobalContext';
 import firebase from '../Api/FirebaseDatabase';
 import ContactsFloatingIcon from '../components/ContactsFloatingIcon';
 import ContactListItem from '../components/ContactListItem';
 import useContacts from '../hooks/useContact';
+import ListItemDeleteAction from '../components/ListItemDeleteAction';
 
 export default function Chats() {
   const { currentUser } = firebase.auth;
@@ -40,6 +41,13 @@ export default function Chats() {
     return user;
   }
 
+  const handleDelete = (room) => {
+    Alert.alert('Delete', 'Are you sure you want to delete this photo?', [
+      { text: 'Yes', onPress: () => {} },
+      { text: 'No' },
+    ]);
+  };
+
   return (
     <>
       <View style={{ flex: 1, padding: 5, paddingRight: 10 }}>
@@ -51,6 +59,7 @@ export default function Chats() {
             room={room}
             time={room.lastMessage.createdAt}
             user={getUserB(room.userB, contacts)}
+            renderRightActions={() => <ListItemDeleteAction />}
           />
         ))}
         <ContactsFloatingIcon />

@@ -24,7 +24,7 @@ function ListingDetailsScreen({ route }) {
     <>
       <Screen style={styles.screen}>
         <View>
-          <Image style={styles.image} source={{ uri: item.image }} />
+          <Image style={styles.image} source={{ uri: item.listingImageURL }} />
           <View style={styles.detailsContainer}>
             <Text style={styles.title}>{item.label}</Text>
             <Text style={styles.price}>${item.price}</Text>

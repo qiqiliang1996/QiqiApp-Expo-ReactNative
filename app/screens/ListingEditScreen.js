@@ -15,7 +15,7 @@ import Screen from '../components/Screen';
 import imagesApi from '../Api/imagesApi';
 
 const validationSchema = Yup.object().shape({
-  images: Yup.array().min(1, 'Please select at least one image'),
+  // images: Yup.array().min(1, 'Please select at least one image'),
   label: Yup.string().required().min(1).label('Label'),
   price: Yup.number().required().min(1).max(10000).label('Price'),
   description: Yup.string().required().label('Description'),
@@ -26,7 +26,7 @@ const categories = [
   {
     backgroundColor: '#fc5c65',
     icon: 'floor-lamp',
-    label: 'Furniture',
+    label: 'Furnitue',
     value: 1,
   },
   {
@@ -38,7 +38,7 @@ const categories = [
   {
     backgroundColor: '#fed330',
     icon: 'camera',
-    label: 'Cameras',
+    label: 'Camera',
     value: 3,
   },
   {
@@ -50,7 +50,7 @@ const categories = [
   {
     backgroundColor: '#2bcbba',
     icon: 'shoe-heel',
-    label: 'Clothing',
+    label: 'Cloth',
     value: 5,
   },
   {
@@ -81,15 +81,17 @@ const categories = [
 
 function ListingEditScreen({ navigation }) {
   const [loading, setLoading] = useState(false);
+  // const [listingImageURL, seListingImageURL] = useState();
 
   const handleSubmit = async (values, formikBag) => {
-    //
     //upload image to firebase storage
-    await imagesApi('images', values);
+    // const url = await imagesApi('images', values);
+    // seListingImageURL(url);
     //
     //upload the new listing to firebase database
     await lingstingApi.addListing(values, formikBag);
     setLoading(false);
+
     Alert.alert(
       'Upload Successfully',
       'Do you want to go to Home page? Dont forget to refresh the page by dragging down the screen',
@@ -127,7 +129,7 @@ function ListingEditScreen({ navigation }) {
           }}
           validationSchema={validationSchema}
         >
-          <FormImagePicker name='images' />
+          {/* <FormImagePicker name='images' /> */}
           <FormField
             maxLength={255}
             name='label'

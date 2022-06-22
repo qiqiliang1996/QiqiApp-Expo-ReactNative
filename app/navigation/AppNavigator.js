@@ -5,11 +5,9 @@ import FeedNavigator from './FeedNavigator';
 import AccountNavigator from './AccountNavigator';
 import NewListingButton from './NewListingButton';
 import routes from './routes';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 const Tab = createMaterialBottomTabNavigator();
 
 export default function AppNavigator() {
-  // console.log('ffff, re-render');
   return (
     <Tab.Navigator>
       <Tab.Screen

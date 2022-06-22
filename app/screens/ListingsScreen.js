@@ -39,7 +39,7 @@ function ListingsScreen({ navigation }) {
           <Card
             title={item.label}
             subTitle={item.price}
-            image={item.image}
+            image={item.listingImageURL}
             onPress={() => navigation.navigate('ListingDetails', item)}
           />
         )}

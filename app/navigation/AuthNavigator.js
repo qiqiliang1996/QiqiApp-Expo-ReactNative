@@ -6,7 +6,6 @@ import WelcomeScreen from '../screens/WelcomeScreen';
 
 const Stack = createNativeStackNavigator();
 export default function AuthNavigator() {
-  // console.log('auth re-render');
   return (
     <Stack.Navigator>
       <Stack.Screen

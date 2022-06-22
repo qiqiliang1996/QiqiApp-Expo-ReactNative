@@ -2,7 +2,7 @@
   "expo": {
     "name": "QiqiWorld",
     "slug": "QiqiWorld",
-    "version": "4.0.0",
+    "version": "5.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
     "userInterfaceStyle": "light",
@@ -21,10 +21,23 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.qqliang1996.QiqiWorld",
       "infoPlist": {
-        "NSPhotoLibraryAddUsageDescription":"We will utilize photos for this app development purposes only. For example: profile picture and listing details",
+        "NSPhotoLibraryAddUsageDescription": "We will utilize photos for this app development purposes only. For example: profile picture and listing details",
         "NSPhotoLibraryUsageDescription": "We will utilize photos for this app development purposes only. For example: profile picture and listing details",
-        "NSContactsUsageDescription":"We will utilize contacts for this app development purposes only. For example: QiqiWold chat rooms functionality"
+        "NSContactsUsageDescription": "We will utilize contacts for this app development purposes only. For example: QiqiWold chat rooms functionality"
       }
+    },
+    "extra": {
+      "bugsnag": {
+        "apiKey": "e830d6083436a9a74da61e5d8e91ac38"
+      }
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "@bugsnag/expo/hooks/post-publish.js",
+          "config": {}
+        }
+      ]
     }
   }
 }

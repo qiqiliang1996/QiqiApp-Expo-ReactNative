@@ -10,6 +10,9 @@ import authSecureStorage from './app/auth/authSecureStorage';
 import GlobalContext from './app/contexts/GlobalContext';
 import colors from './app/config/colors';
 import * as SplashScreen from 'expo-splash-screen';
+import BugsnagLogger from './app/utilities/logger';
+
+BugsnagLogger.start();
 
 LogBox.ignoreLogs([
   "exported from 'deprecated-react-native-prop-types'.",
