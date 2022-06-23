@@ -19,7 +19,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.qqliang1996.QiqiWorld",
+      "bundleIdentifier": "com.xxxxx",
       "infoPlist": {
         "NSPhotoLibraryAddUsageDescription": "We will utilize photos for this app development purposes only. For example: profile picture and listing details",
         "NSPhotoLibraryUsageDescription": "We will utilize photos for this app development purposes only. For example: profile picture and listing details",
@@ -28,7 +28,7 @@
     },
     "extra": {
       "bugsnag": {
-        "apiKey": "e830d6083436a9a74da61e5d8e91ac38"
+        "apiKey": "e830d608xxxxxxx"
       }
     },
     "hooks": {
