@@ -59,7 +59,7 @@ export default function Chats() {
             room={room}
             time={room.lastMessage.createdAt}
             user={getUserB(room.userB, contacts)}
-            renderRightActions={() => <ListItemDeleteAction />}
+            renderRightActions={() => <ListItemDeleteAction room={room} />}
           />
         ))}
         <ContactsFloatingIcon />

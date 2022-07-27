@@ -7,8 +7,10 @@ import {
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
+import Firebase from '../Api/FirebaseDatabase';
+import { deleteDoc, doc } from 'firebase/firestore';
 
-function ListItemDeleteAction({ onPress }) {
+function ListItemDeleteAction({ room }) {
   const handleBlock = () => {
     Alert.alert(
       'Block',
@@ -41,6 +43,20 @@ function ListItemDeleteAction({ onPress }) {
     );
   };
 
+  const handleDelete = () => {
+    Alert.alert('Delete', 'I want to delete this chatroom', [
+      {
+        text: 'Yes',
+        onPress: async () => {
+          const docRef = doc(Firebase.db, 'rooms', room.id);
+          const deleteResult = await deleteDoc(docRef);
+          console.log(deleteResult, 'deleteResult from ListItemDeleteAction');
+        },
+      },
+      { text: 'No' },
+    ]);
+  };
+
   const userBlocked = () => {
     Alert.alert('User Blocked', 'This user is blocked', [
       { text: 'OK', onPress: () => {} },
@@ -54,6 +70,8 @@ function ListItemDeleteAction({ onPress }) {
       [{ text: 'OK', onPress: () => {} }]
     );
   };
+
+  console.log(room, 'room from ListItemDeleteAction');
 
   return (
     // <TouchableWithoutFeedback>
@@ -72,6 +90,11 @@ function ListItemDeleteAction({ onPress }) {
       <View>
         <TouchableWithoutFeedback onPress={handleReport}>
           <MaterialIcons name='report-problem' color='#EEAC0C' size={35} />
+        </TouchableWithoutFeedback>
+      </View>
+      <View>
+        <TouchableWithoutFeedback onPress={handleDelete}>
+          <MaterialCommunityIcons name='trash-can' color='red' size={35} />
         </TouchableWithoutFeedback>
       </View>
     </View>

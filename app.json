@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "QiqiWorld",
-    "slug": "QiqiWorld",
-    "version": "5.0.0",
+    "name": "QiqiApp",
+    "slug": "QiqiApp",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
     "userInterfaceStyle": "light",
