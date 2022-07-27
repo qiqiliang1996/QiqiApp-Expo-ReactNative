@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useRoute } from '@react-navigation/native';
 import GlobalContext from '../contexts/GlobalContext';
 import useContacts from '../hooks/useContact';
-import { FlatList, Text } from 'react-native';
+import { FlatList } from 'react-native';
 import { collection, onSnapshot, query, where } from '@firebase/firestore';
 import ContactListItem from '../components/ContactListItem';
 import firebase from '../Api/FirebaseDatabase';

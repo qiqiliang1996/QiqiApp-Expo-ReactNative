@@ -11,13 +11,14 @@ import {
 import firebase from '../Api/FirebaseDatabase';
 import authApi from '../Api/auth';
 import useAuth from '../auth/useAuth';
+import { CheckBox } from 'react-native-elements';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label('Email'),
   password: Yup.string().required().min(4).label('Password'),
 });
 
-function LoginScreen(props) {
+function LoginScreen({ navigation }) {
   const auth = firebase.auth;
   const { login } = useAuth();
   const [error, setError] = useState(false);
@@ -39,6 +40,10 @@ function LoginScreen(props) {
     } else {
       setError(response);
     }
+  };
+
+  const handleCheckBox = () => {
+    navigation.navigate('Aggrement');
   };
 
   return (
@@ -68,7 +73,13 @@ function LoginScreen(props) {
           secureTextEntry
           textContentType='password'
         />
+
         <SubmitButton title='Login' />
+        <CheckBox
+          title='I have read and agree the Terms and Conditions'
+          checked={true}
+          onPress={handleCheckBox}
+        />
       </Form>
     </Screen>
   );

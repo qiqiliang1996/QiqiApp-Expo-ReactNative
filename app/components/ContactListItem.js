@@ -49,7 +49,10 @@ export default function ContactListItem({
                     color: colors.skyblue,
                   }}
                 >
-                  {user.displayName || user.name || 'User Random'}
+                  {user.displayName ||
+                    user.name ||
+                    user.contactName ||
+                    'User Random'}
                 </Text>
               </Col>
               {time && (

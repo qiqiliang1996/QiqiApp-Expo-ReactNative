@@ -24,6 +24,8 @@ const doneItemsCollectionRef = collection(db, 'doneItems');
 
 //users collection Ref
 const usersCollectionRef = collection(db, 'users');
+//users collection Ref
+const contactsCollectionRef = collection(db, 'contacts');
 
 //getStorage
 const storage = getStorage();
@@ -74,10 +76,11 @@ export default {
   db,
   storage,
   auth,
-  doneItemsCollectionRef,
   getDocs,
   docs,
   getAssetImage,
-  usersCollectionRef,
   getAvatarImage,
+  usersCollectionRef,
+  contactsCollectionRef,
+  doneItemsCollectionRef,
 };

@@ -134,7 +134,7 @@ export default function Chat({ route }) {
                 alignItems: 'center',
                 justifyContent: 'center',
                 marginHorizontal: 10,
-                marginBottom: -10,
+                marginTop: 10,
               }}
               onPress={() => {
                 if (text && onSend) {

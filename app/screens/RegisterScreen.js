@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import * as Yup from 'yup';
+import { CheckBox } from 'react-native-elements';
 
 import Screen from '../components/Screen';
 import {
@@ -34,6 +35,9 @@ function RegisterScreen({ navigation }) {
     } else {
       setError(response);
     }
+  };
+  const handleCheckBox = () => {
+    navigation.navigate('Aggrement');
   };
 
   return (
@@ -69,6 +73,11 @@ function RegisterScreen({ navigation }) {
           textContentType='password'
         />
         <SubmitButton title='Register' />
+        <CheckBox
+          title='I have read and agree the Terms and Conditions'
+          checked={true}
+          onPress={handleCheckBox}
+        />
       </Form>
     </Screen>
   );
